@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+    <style>
+      .contact-left {
+        flex-basis: 35%;
+      }
+
+      .contact-right {
+        flex-basis: 60%;
+      }
+
+      .contact-left p {
+        margin-top: 30px;
+      }
+
+      .contact-left p i {
+        color: #ff00ff;
+        margin-right: 15px;
+        font-size: 25px;
+      }
+
+      .social-icons {
+        margin-top: 30px;
+      }
+
+      .social-icons a {
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: #ababab;
+        display: inline-block;
+        transition: transform 0.5s;
+      }
+
+      .social-icons a:hover {
+        color: #ff00ff;
+        transform: translateY(-5px);
+      }
+
+      .btn.btn2 {
+        display: inline-block;
+        background: #ff00ff;
+      }
+
+      .contact-right form {
+        width: 100%;
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #262626;
+        padding: 15px;
+        margin: 15px 0;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 6px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .copyright {
+        width: 100%;
+        text-align: center;
+        padding: 25px 0;
+        background: #262626;
+        font-weight: 300;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-right">
+      <form name="submit-to-google-sheet">
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          name="Name"
+          placeholder="Your Name"
+          required
+        />
+
+        <label for="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+
+        <label for="message">Your Message</label>
+        <textarea
+          id="message"
+          name="Message"
+          rows="6"
+          placeholder="Your Message"
+        ></textarea>
+
+        <button type="submit" class="btn btn2">Submit</button>
+      </form>
+      <span id="mesg"></span>
+    </div>
+
+    <!-- Add your JavaScript code for Google Sheets integration here -->
+    <script>
+      // Example JavaScript code for submitting form data to Google Sheets
+      const form = document.forms["submit-to-google-sheet"];
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Replace the following lines with your own code to send data to Google Sheets
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        console.log("Form data:", data);
+
+        // Reset the form or display a success message as needed
+        form.reset();
+      });
+    </script>
+
+    <div class="copyright">© 2023 Your Name</div>
+  </body>
+</html>
